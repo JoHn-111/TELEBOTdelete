@@ -10,7 +10,7 @@ def welcome(message):
 			time.sleep(0.0000001)
 		else:
 			stik = str(message.sticker.set_name)
-			f = open('test.txt', 'r')
+			f = open('stickers.txt', 'r')
 			test = f.read()
 			if stik in test:
 				bot.delete_message(message.chat.id, message.message_id)
@@ -36,7 +36,7 @@ def remember(message):
 	    if message.from_user.id == 293490416:
 		    msg = bot.send_message(message.chat.id, 'Я запомнил этот набор\nЕсли кто-то кроме вас будет им пользоваться я буду его удалять)')
 
-		    f = open('test.txt', 'a')
+		    f = open('stickers.txt', 'a')
 		    f.write(str(message.sticker.set_name)+'\n')
 		    f.close()
 		else:
