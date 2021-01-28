@@ -15,8 +15,8 @@ def welcome(message):
 			if stik in test:
 				bot.delete_message(message.chat.id, message.message_id)
 			f.close()
-	except Exception as e:
-		time.sleep(0.0000001)
+	except:
+		pass
 
 @bot.message_handler(commands=['remember'])
 def welcome2(message):
@@ -26,9 +26,8 @@ def welcome2(message):
 			bot.register_next_step_handler(msg, remember)
 		else:
 			msg = bot.send_message(message.chat.id, 'Извините у вас нет доступа к этой команде')
-			time.sleep(0.0000001)
-	except Exception as e:
-		time.sleep(0.0000001)
+	except:
+		pass
 
 
 def remember(message):
@@ -39,10 +38,9 @@ def remember(message):
 		    f = open('stickers.txt', 'a')
 		    f.write(str(message.sticker.set_name)+'\n')
 		    f.close()
-		else:
-            time.sleep(0.0000001)
-	except Exception as e:
-		time.sleep(0.0000001)
+
+	except:
+		pass
 
 
 
