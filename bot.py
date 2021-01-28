@@ -1,6 +1,8 @@
 import telebot
 import test
 import time
+
+
 bot = telebot.TeleBot("TOKEN")
 
 @bot.message_handler(content_types=['sticker'])
@@ -41,7 +43,6 @@ def remember(message):
 
 	except:
 		pass
-
 
 
 if __name__ == '__main__':
